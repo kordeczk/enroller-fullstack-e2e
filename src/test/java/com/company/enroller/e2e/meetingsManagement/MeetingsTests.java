@@ -31,9 +31,4 @@ public class MeetingsTests extends BaseTests {
     }
 
 
-    @AfterEach
-    void exit() {
-//        TODO
-    }
-
 }

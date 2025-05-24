@@ -46,7 +46,6 @@ public class BasePage {
     }
 
     public Boolean elementIsPresent(WebElement element) {
-        //TODO
         return true;
     }
 
@@ -63,19 +62,15 @@ public class BasePage {
     }
 
     public WebElement getMeetingByTitle(String meetingName) {
-//        TODO
-        return null;
-    }
+        //        TODO
+        try {
 
-    public List<String> getParticipantsListForMeeting(String meetingName) {
-        String participantsItemSel = "td li";
-        WebElement meeting = this.getMeetingByTitle(meetingName);
-        return Optional.ofNullable(meeting)
-                .map(m -> m.findElements(By.cssSelector(participantsItemSel))
-                        .stream()
-                        .map(WebElement::getText)
-                        .toList())
-                .orElse(List.of());
+        } catch (NoSuchElementException ex) {
+            System.out.println("NoSuchElementException has been handled." + ex);
+        } catch (Exception e) {
+            System.out.println("Exception: An unexpected error occurred for meeting title: " + meetingName + e.getMessage());
+        }
+        return null;
     }
 
 }

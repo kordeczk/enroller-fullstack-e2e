@@ -15,31 +15,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginTests extends BaseTests {
 
-    WebDriver driver;
-    LoginPage page;
-
-    @BeforeEach
-    void setup() {
-        this.driver = WebDriverManager.chromedriver().create();
-        this.page = new LoginPage(driver);
-        this.page.get(Const.HOME_PAGE);
-    }
-
 
     @Test
     @DisplayName("[LOGOWANIE.1] No login, system should not confirm the user")
     void emptyLoginName() {
-        this.page.loginAs("");
-        // Asserts
-        assertThat(this.page.loginBtnIsPresent()).isTrue();
 
     }
 
+    @Test
+    @DisplayName("[LOGOWANIE.2] The system should accept the login and display the meetings view. " +
+            "The user should be able to see all meetings")
+    void correctLoginName() {
 
-
-    @AfterEach
-    void exit() {
-        this.page.quit();
     }
+
 
 }

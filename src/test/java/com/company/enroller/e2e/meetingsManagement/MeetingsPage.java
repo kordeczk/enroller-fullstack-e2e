@@ -9,6 +9,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class MeetingsPage extends BasePage {
 
+    @FindBy(xpath = "//*[contains(text(), \"" + Const.NEW_MEETING_BTN_LABEL + "\")]")
+    @CacheLookup
+    private WebElement addNewMeetingBtn;
 
     public MeetingsPage(WebDriver driver) {
         super(driver);

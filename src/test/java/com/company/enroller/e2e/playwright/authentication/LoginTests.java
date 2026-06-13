@@ -52,8 +52,6 @@ public class LoginTests extends BaseTests {
     }
 
 
-
-
     @AfterEach
     void exit() {
         if (browser != null) {
